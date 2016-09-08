@@ -1,8 +1,6 @@
 # Committee::Rails
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/committee/rails`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+You can use `assert_schema_conform` in rails.
 
 ## Installation
 
@@ -22,7 +20,22 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+describe 'request spec' do
+  include Committee::Rails::Test::Methods
+
+  def schema_path
+    'path/to/schema.json' # default to docs/schema/schema.json
+  end  
+
+  describe 'GET /' do
+    it 'confirm json schema' do
+      get '/'
+      assert_schema_conform
+    end
+  end
+end
+```
 
 ## Development
 
@@ -38,4 +51,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
