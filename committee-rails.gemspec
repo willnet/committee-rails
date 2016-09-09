@@ -8,13 +8,11 @@ Gem::Specification.new do |spec|
   spec.version       = Committee::Rails::VERSION
   spec.authors       = ['willnet']
   spec.email         = ['netwillnet@gmail.com']
-
   spec.summary       = 'Committee for rails'
   spec.description   = 'Committee for rails'
   spec.homepage      = 'https://github.com/willnet/committee-rails'
   spec.license       = 'MIT'
-
-  spec.files         = `git ls-files -z`.split('\x0').reject do |f|
+  spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
   end
   spec.bindir        = 'exe'
