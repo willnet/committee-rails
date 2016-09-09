@@ -1,5 +1,8 @@
 # Committee::Rails
 
+[![Build Status](https://travis-ci.org/willnet/committee-rails.svg?branch=master)](https://travis-ci.org/willnet/committee-rails)
+[![Gem Version](https://badge.fury.io/rb/committee-rails.svg)](https://badge.fury.io/rb/committee-rails)
+
 You can use `assert_schema_conform` in rails.
 
 ## Installation
