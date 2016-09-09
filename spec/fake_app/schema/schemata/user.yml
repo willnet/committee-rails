@@ -1,0 +1,74 @@
+title: user
+description: ユーザ情報
+stability: prototype
+strictProperties: true
+id: "schemata/user"
+type:
+  - object
+definitions:
+  id:
+    example: 42
+    readOnly: true
+    type: integer
+  nickname:
+    type: string
+    example: willnet
+  created_at:
+    format: date-time
+    type: string
+  updated_at:
+    format: date-time
+    type: string
+
+links:
+- description: create user
+  href: "/users"
+  method: POST
+  rel: create
+  schema:
+    properties:
+      nickname:
+        "$ref": "/schemata/user#/definitions/nickname"
+    required:
+      - nickname
+    type: object
+  targetSchema:
+    type: object
+    properties:
+      id:
+        "$ref": "/schemata/user#/definitions/id"
+      nickname:
+        "$ref": "/schemata/user#/definitions/nickname"
+    required:
+      - id
+      - nickname
+- description: update user
+  href: "/users/{(%2Fschemata%2Fuser%23%2Fdefinitions%2Fid)}"
+  method: PATCH
+  rel: update
+  schema:
+    properties:
+      nickname:
+        "$ref": "/schemata/user#/definitions/nickname"
+    required:
+      - nickname
+    type: object
+  targetSchema:
+    type: object
+    properties:
+      id:
+        "$ref": "/schemata/user#/definitions/id"
+      nickname:
+        "$ref": "/schemata/user#/definitions/nickname"
+    required:
+      - id
+      - nickname
+properties:
+  id:
+    "$ref": "/schemata/user#/definitions/id"
+  nickname:
+    "$ref": "/schemata/user#/definitions/nickname"
+  created_at:
+    "$ref": "/schemata/user#/definitions/created_at"
+  updated_at:
+    "$ref": "/schemata/user#/definitions/updated_at"

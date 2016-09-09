@@ -1,0 +1,154 @@
+DEPRECATION WARNING: You didn't set `secret_key_base`. Read the upgrade documentation to learn more about this new config option. (called from block (3 levels) in <top (required)> at /Users/willnet/work/committee-rails/spec/methods_spec.rb:10)
+Started POST "/users" for 127.0.0.1 at 2016-09-09 11:43:33 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"nickname"=>"willnet"}
+Completed 200 OK in 1ms (Views: 0.8ms)
+
+
+DEPRECATION WARNING: You didn't set `secret_key_base`. Read the upgrade documentation to learn more about this new config option. (called from block (3 levels) in <top (required)> at /Users/willnet/work/committee-rails/spec/methods_spec.rb:12)
+Started POST "/users" for 127.0.0.1 at 2016-09-09 11:44:07 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"nickname"=>"willnet"}
+Completed 200 OK in 0ms (Views: 0.3ms)
+
+
+DEPRECATION WARNING: You didn't set `secret_key_base`. Read the upgrade documentation to learn more about this new config option. (called from block (3 levels) in <top (required)> at /Users/willnet/work/committee-rails/spec/methods_spec.rb:12)
+Started POST "/users" for 127.0.0.1 at 2016-09-09 11:44:45 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"nickname"=>"willnet"}
+Completed 200 OK in 0ms (Views: 0.2ms)
+
+
+DEPRECATION WARNING: You didn't set `secret_key_base`. Read the upgrade documentation to learn more about this new config option. (called from block (3 levels) in <top (required)> at /Users/willnet/work/committee-rails/spec/methods_spec.rb:12)
+Started POST "/users" for 127.0.0.1 at 2016-09-09 11:45:36 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"nickname"=>"willnet"}
+Completed 200 OK in 0ms (Views: 0.3ms)
+
+
+DEPRECATION WARNING: You didn't set `secret_key_base`. Read the upgrade documentation to learn more about this new config option. (called from block (3 levels) in <top (required)> at /Users/willnet/work/committee-rails/spec/methods_spec.rb:12)
+Started POST "/users" for 127.0.0.1 at 2016-09-09 11:46:18 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"nickname"=>"willnet"}
+Completed 200 OK in 0ms (Views: 0.3ms)
+
+
+DEPRECATION WARNING: You didn't set `secret_key_base`. Read the upgrade documentation to learn more about this new config option. (called from block (3 levels) in <top (required)> at /Users/willnet/work/committee-rails/spec/methods_spec.rb:12)
+Started POST "/users" for 127.0.0.1 at 2016-09-09 11:50:03 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"nickname"=>"willnet"}
+Completed 200 OK in 0ms (Views: 0.3ms)
+
+
+DEPRECATION WARNING: You didn't set `secret_key_base`. Read the upgrade documentation to learn more about this new config option. (called from block (3 levels) in <top (required)> at /Users/willnet/work/committee-rails/spec/methods_spec.rb:12)
+Started POST "/users" for 127.0.0.1 at 2016-09-09 11:51:12 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"nickname"=>"willnet"}
+Completed 200 OK in 0ms (Views: 0.3ms)
+
+
+Started PATCH "/users" for 127.0.0.1 at 2016-09-09 11:51:12 +0900
+  
+ActionController::RoutingError (No route matches [PATCH] "/users"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+rack-test (0.6.3) lib/rack/mock_session.rb:30:in `request'
+rack-test (0.6.3) lib/rack/test.rb:244:in `process_request'
+rack-test (0.6.3) lib/rack/test.rb:124:in `request'
+actionpack (5.0.0.1) lib/action_dispatch/testing/integration.rb:379:in `process'
+actionpack (5.0.0.1) lib/action_dispatch/testing/integration.rb:296:in `process_with_kwargs'
+actionpack (5.0.0.1) lib/action_dispatch/testing/integration.rb:52:in `patch'
+actionpack (5.0.0.1) lib/action_dispatch/testing/integration.rb:497:in `block (2 levels) in <module:Runner>'
+/Users/willnet/work/committee-rails/spec/methods_spec.rb:19:in `block (3 levels) in <top (required)>'
+rspec-core (3.5.3) lib/rspec/core/example.rb:254:in `instance_exec'
+rspec-core (3.5.3) lib/rspec/core/example.rb:254:in `block in run'
+rspec-core (3.5.3) lib/rspec/core/example.rb:496:in `block in with_around_and_singleton_context_hooks'
+rspec-core (3.5.3) lib/rspec/core/example.rb:453:in `block in with_around_example_hooks'
+rspec-core (3.5.3) lib/rspec/core/hooks.rb:464:in `block in run'
+rspec-core (3.5.3) lib/rspec/core/hooks.rb:604:in `block in run_around_example_hooks_for'
+rspec-core (3.5.3) lib/rspec/core/example.rb:338:in `call'
+rspec-rails (3.5.2) lib/rspec/rails/adapters.rb:127:in `block (2 levels) in <module:MinitestLifecycleAdapter>'
+rspec-core (3.5.3) lib/rspec/core/example.rb:443:in `instance_exec'
+rspec-core (3.5.3) lib/rspec/core/example.rb:443:in `instance_exec'
+rspec-core (3.5.3) lib/rspec/core/hooks.rb:375:in `execute_with'
+rspec-core (3.5.3) lib/rspec/core/hooks.rb:606:in `block (2 levels) in run_around_example_hooks_for'
+rspec-core (3.5.3) lib/rspec/core/example.rb:338:in `call'
+rspec-core (3.5.3) lib/rspec/core/hooks.rb:607:in `run_around_example_hooks_for'
+rspec-core (3.5.3) lib/rspec/core/hooks.rb:464:in `run'
+rspec-core (3.5.3) lib/rspec/core/example.rb:453:in `with_around_example_hooks'
+rspec-core (3.5.3) lib/rspec/core/example.rb:496:in `with_around_and_singleton_context_hooks'
+rspec-core (3.5.3) lib/rspec/core/example.rb:251:in `run'
+rspec-core (3.5.3) lib/rspec/core/example_group.rb:627:in `block in run_examples'
+rspec-core (3.5.3) lib/rspec/core/example_group.rb:623:in `map'
+rspec-core (3.5.3) lib/rspec/core/example_group.rb:623:in `run_examples'
+rspec-core (3.5.3) lib/rspec/core/example_group.rb:589:in `run'
+rspec-core (3.5.3) lib/rspec/core/example_group.rb:590:in `block in run'
+rspec-core (3.5.3) lib/rspec/core/example_group.rb:590:in `map'
+rspec-core (3.5.3) lib/rspec/core/example_group.rb:590:in `run'
+rspec-core (3.5.3) lib/rspec/core/runner.rb:113:in `block (3 levels) in run_specs'
+rspec-core (3.5.3) lib/rspec/core/runner.rb:113:in `map'
+rspec-core (3.5.3) lib/rspec/core/runner.rb:113:in `block (2 levels) in run_specs'
+rspec-core (3.5.3) lib/rspec/core/configuration.rb:1835:in `with_suite_hooks'
+rspec-core (3.5.3) lib/rspec/core/runner.rb:112:in `block in run_specs'
+rspec-core (3.5.3) lib/rspec/core/reporter.rb:77:in `report'
+rspec-core (3.5.3) lib/rspec/core/runner.rb:111:in `run_specs'
+rspec-core (3.5.3) lib/rspec/core/runner.rb:87:in `run'
+rspec-core (3.5.3) lib/rspec/core/runner.rb:71:in `run'
+rspec-core (3.5.3) lib/rspec/core/runner.rb:45:in `invoke'
+rspec-core (3.5.3) exe/rspec:4:in `<top (required)>'
+/Users/willnet/.rbenv/versions/2.3.1/bin/rspec:22:in `load'
+/Users/willnet/.rbenv/versions/2.3.1/bin/rspec:22:in `<main>'
+DEPRECATION WARNING: You didn't set `secret_key_base`. Read the upgrade documentation to learn more about this new config option. (called from block (3 levels) in <top (required)> at /Users/willnet/work/committee-rails/spec/methods_spec.rb:12)
+Started POST "/users" for 127.0.0.1 at 2016-09-09 11:51:31 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"nickname"=>"willnet"}
+Completed 200 OK in 0ms (Views: 0.3ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2016-09-09 11:51:31 +0900
+Processing by UsersController#update as HTML
+  Parameters: {"nickname"=>"willnet", "id"=>"1"}
+Completed 200 OK in 0ms (Views: 0.2ms)
+
+
+DEPRECATION WARNING: You didn't set `secret_key_base`. Read the upgrade documentation to learn more about this new config option. (called from block (3 levels) in <top (required)> at /Users/willnet/work/committee-rails/spec/methods_spec.rb:12)
+Started POST "/users" for 127.0.0.1 at 2016-09-09 11:52:09 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"nickname"=>"willnet"}
+Completed 200 OK in 0ms (Views: 0.3ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2016-09-09 11:52:09 +0900
+Processing by UsersController#update as HTML
+  Parameters: {"nickname"=>"willnet", "id"=>"1"}
+Completed 200 OK in 0ms (Views: 0.2ms)
+
+
+DEPRECATION WARNING: You didn't set `secret_key_base`. Read the upgrade documentation to learn more about this new config option. (called from block (3 levels) in <top (required)> at /Users/willnet/work/committee-rails/spec/methods_spec.rb:12)
+Started POST "/users" for 127.0.0.1 at 2016-09-09 11:53:41 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"nickname"=>"willnet"}
+Completed 200 OK in 0ms (Views: 0.3ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2016-09-09 11:53:41 +0900
+Processing by UsersController#update as HTML
+  Parameters: {"nickname"=>"willnet", "id"=>"1"}
+Completed 200 OK in 0ms (Views: 0.2ms)
+
+

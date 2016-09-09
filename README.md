@@ -25,7 +25,7 @@ describe 'request spec' do
   include Committee::Rails::Test::Methods
 
   def schema_path
-    'path/to/schema.json' # default to docs/schema/schema.json
+    Rails.root.join('path', 'to', 'schema.json') # default to docs/schema/schema.json
   end  
 
   describe 'GET /' do
