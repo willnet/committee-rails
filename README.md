@@ -32,7 +32,7 @@ describe 'request spec' do
   end  
 
   describe 'GET /' do
-    it 'confirm json schema' do
+    it 'conform json schema' do
       get '/'
       assert_schema_conform
     end
