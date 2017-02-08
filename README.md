@@ -29,7 +29,7 @@ describe 'request spec' do
 
   def schema_path
     Rails.root.join('path', 'to', 'schema.json') # default to docs/schema/schema.json
-  end  
+  end
 
   describe 'GET /' do
     it 'conform json schema' do
