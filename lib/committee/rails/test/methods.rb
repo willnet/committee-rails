@@ -3,9 +3,14 @@ module Committee::Rails
     module Methods
       include Committee::Test::Methods
 
-      def schema_path
-        Rails.root.join('docs', 'schema', 'schema.json')
+      def committee_schema
+        @committee_schema ||= begin
+          driver = Committee::Drivers::HyperSchema.new
+          schema_hash = JSON.parse(File.read(Rails.root.join('docs', 'schema', 'schema.json')))
+          driver.parse(schema_hash)
+        end
       end
+
       def assert_schema_conform
         @committee_schema ||= begin
           # The preferred option. The user has already parsed a schema elsewhere
