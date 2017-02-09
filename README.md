@@ -17,9 +17,10 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
+If you use committee prior to 2.0, you have to use committee-rails 0.1.x. Please see below.
 
-    $ gem install committee-rails
+[0.1 (0-1-stable) documentation](https://github.com/willnet/committee-rails/tree/0-1-stable)
+
 
 ## Usage
 
