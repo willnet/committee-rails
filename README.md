@@ -27,8 +27,12 @@ Or install it yourself as:
 describe 'request spec' do
   include Committee::Rails::Test::Methods
 
-  def schema_path
-    Rails.root.join('path', 'to', 'schema.json') # default to docs/schema/schema.json
+  def committee_schema
+    @committee_schema ||= begin
+      driver = Committee::Drivers::HyperSchema.new
+      schema_hash = JSON.parse(File.read(Rails.root.join('schema', 'schema.json'))) # default to docs/schema/schema.json
+      driver.parse(schema_hash)
+    end
   end
 
   describe 'GET /' do
