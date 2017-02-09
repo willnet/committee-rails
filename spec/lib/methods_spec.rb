@@ -3,8 +3,12 @@ require 'spec_helper'
 describe '#assert_schema_conform', type: :request do
   include Committee::Rails::Test::Methods
 
-  def schema_path
-    Rails.root.join('schema', 'schema.json')
+  def committee_schema
+    @committee_schema ||= begin
+      driver = Committee::Drivers::HyperSchema.new
+      schema_hash = JSON.parse(File.read(Rails.root.join('schema', 'schema.json')))
+      driver.parse(schema_hash)
+    end
   end
 
   context 'response conform JSON Schema' do
