@@ -4,11 +4,18 @@ module Committee::Rails
       include Committee::Test::Methods
 
       def committee_schema
+        @committee_schema = committee_options[:schema]
+
         @committee_schema ||= begin
+
           driver = Committee::Drivers::HyperSchema.new
           schema_hash = JSON.parse(File.read(Rails.root.join('docs', 'schema', 'schema.json')))
           driver.parse(schema_hash)
         end
+      end
+
+      def committee_options
+        {}
       end
 
       def assert_schema_conform
