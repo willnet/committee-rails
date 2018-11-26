@@ -4,10 +4,9 @@ module Committee::Rails
       include Committee::Test::Methods
 
       def committee_schema
-        @committee_schema ||= begin
-          schema = committee_options[:schema]
+        @committee_schema = committee_options[:schema]
 
-          return schema if schema
+        @committee_schema ||= begin
 
           driver = Committee::Drivers::HyperSchema.new
           schema_hash = JSON.parse(File.read(Rails.root.join('docs', 'schema', 'schema.json')))
