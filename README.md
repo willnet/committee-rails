@@ -24,16 +24,14 @@ If you use committee prior to 2.0, you have to use committee-rails 0.1.x. Please
 
 ## Usage
 
+### normal usage
+
 ```ruby
 describe 'request spec' do
   include Committee::Rails::Test::Methods
 
-  def committee_schema
-    @committee_schema ||= begin
-      driver = Committee::Drivers::HyperSchema.new
-      schema_hash = JSON.parse(File.read(Rails.root.join('schema', 'schema.json'))) # default to docs/schema/schema.json
-      driver.parse(schema_hash)
-    end
+  def committee_options
+    @committee_options ||= { schema_path: Rails.root.join('schema', 'schema.json').to_s }
   end
 
   describe 'GET /' do
@@ -42,6 +40,16 @@ describe 'request spec' do
       assert_schema_conform
     end
   end
+end
+```
+
+### rspec setting
+If you use rspec, you can use very simple.
+
+```ruby
+RSpec.configure do |config|
+  config.add_setting :committee_options
+  config.committee_options = { schema_path: Rails.root.join('schema', 'schema.json').to_s }
 end
 ```
 

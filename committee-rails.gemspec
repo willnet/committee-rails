@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
-  spec.add_dependency 'committee', '>= 2.0.0'
+  spec.add_dependency 'committee', '>= 2.4.0'
   spec.add_dependency 'activesupport'
   spec.add_dependency 'actionpack'
   spec.add_dependency 'railties'
