@@ -2,7 +2,6 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 require 'bundler/setup'
 require 'action_controller/railtie'
-require 'committee'
 Bundler.require
 
 require 'fake_app/rails_app'
