@@ -1,3 +1,5 @@
+require 'committee'
+
 module Committee::Rails
   module Test
     module Methods
