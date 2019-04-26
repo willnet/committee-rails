@@ -8,3 +8,4 @@
 /spec/reports/
 /tmp/
 /spec/fake_app/log/
+/gemfiles/*.lock
