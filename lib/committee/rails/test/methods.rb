@@ -16,7 +16,7 @@ module Committee::Rails
         elsif !defined?(@committee_schema)
           { schema: default_schema }
         else
-          # schema_url_prefix method call this but the user overrite comittee_schema, we got error
+          # schema_url_prefix method call this but the user overrite committee_schema, we got error
           # we can remove in comittee 3.x
           { schema: committee_schema }
         end
