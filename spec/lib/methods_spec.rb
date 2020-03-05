@@ -6,19 +6,19 @@ describe '#assert_schema_conform', type: :request do
   context 'set option' do
     before do
       RSpec.configuration.add_setting :committee_options
-      RSpec.configuration.committee_options = {schema_path: Rails.root.join('schema', 'schema.json').to_s }
+      RSpec.configuration.committee_options = { schema_path: Rails.root.join('schema', 'schema.json').to_s, old_assert_behavior: false }
     end
 
     context 'response conform JSON Schema' do
       it 'pass' do
-        post '/users', params: { nickname: 'willnet' }
+        post '/users', params: { nickname: 'willnet' }.to_json, headers: { "Content-Type" =>  "application/json" }
         assert_schema_conform
       end
     end
 
     context "response doesn't conform JSON Schema" do
       it 'fail' do
-        patch '/users/1', params: { nickname: 'willnet' }
+        patch '/users/1', params: { nickname: 'willnet' }.to_json, headers: { "Content-Type" =>  "application/json" }
         expect { assert_schema_conform }.to raise_error(Committee::InvalidResponse)
       end
     end
@@ -38,11 +38,11 @@ describe '#assert_schema_conform', type: :request do
 
     context 'override default setting' do
       def committee_options
-        {schema_path: Rails.root.join('schema', 'schema.json').to_s }
+        { schema_path: Rails.root.join('schema', 'schema.json').to_s, old_assert_behavior: false }
       end
 
       it 'pass' do
-        post '/users', params: { nickname: 'willnet' }
+        post '/users', params: { nickname: 'willnet' }.to_json, headers: { "Content-Type" =>  "application/json" }
         assert_schema_conform
       end
     end
