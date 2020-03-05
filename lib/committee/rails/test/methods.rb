@@ -8,12 +8,8 @@ module Committee::Rails
       def committee_options
         if defined?(RSpec) && (options = RSpec.try(:configuration).try(:committee_options))
           options
-        elsif !defined?(@committee_schema)
-          { schema: default_schema }
         else
-          # schema_url_prefix method call this but the user overrite committee_schema, we got error
-          # we can remove in comittee 3.x
-          { schema: committee_schema }
+          { schema_path: default_schema }
         end
       end
 
