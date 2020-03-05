@@ -1,6 +1,7 @@
 FakeApp = Class.new(Rails::Application)
 FakeApp.config.session_store :cookie_store, key: '_myapp_session'
 FakeApp.config.eager_load = false
+FakeApp.config.hosts << 'www.example.com' if FakeApp.config.respond_to?(:hosts)
 FakeApp.config.root = File.dirname(__FILE__)
 FakeApp.initialize!
 
