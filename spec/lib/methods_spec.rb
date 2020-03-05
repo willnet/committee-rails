@@ -36,19 +36,6 @@ describe '#assert_schema_conform', type: :request do
       end
     end
 
-    is_committee_v2 = Committee::Test::Methods.method_defined?(:committee_schema)
-    skip_reason = 'this test for 2.4.0, committee 3.x use committee_options'
-    context 'override default setting', skip: (skip_reason unless is_committee_v2) do
-      def committee_schema
-        @committee_schema ||= Committee::Drivers.load_from_file(Rails.root.join('schema', 'schema.json').to_s)
-      end
-
-      it 'pass' do
-        post '/users', params: { nickname: 'willnet' }
-        assert_schema_conform
-      end
-    end
-
     context 'override default setting' do
       def committee_options
         {schema_path: Rails.root.join('schema', 'schema.json').to_s }

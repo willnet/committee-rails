@@ -5,11 +5,6 @@ module Committee::Rails
     module Methods
       include Committee::Test::Methods
 
-      def committee_schema
-        # this code for 2.4.0, committee 3.x use committee_options
-        @committee_schema ||= Committee::Middleware::Base.new(nil, committee_options).send(:get_schema, committee_options)
-      end
-
       def committee_options
         if defined?(RSpec) && (options = RSpec.try(:configuration).try(:committee_options))
           options
