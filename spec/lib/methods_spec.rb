@@ -11,14 +11,14 @@ describe '#assert_schema_conform', type: :request do
 
     context 'and when response conform JSON Schema' do
       it 'pass' do
-        post '/users', params: { nickname: 'willnet' }.to_json, headers: { "Content-Type" =>  "application/json" }
+        post '/users', params: { nickname: 'willnet' }.to_json, headers: { 'Content-Type' =>  'application/json' }
         assert_schema_conform
       end
     end
 
     context "and when response doesn't conform JSON Schema" do
       it 'raise Committee::InvalidResponse' do
-        patch '/users/1', params: { nickname: 'willnet' }.to_json, headers: { "Content-Type" =>  "application/json" }
+        patch '/users/1', params: { nickname: 'willnet' }.to_json, headers: { 'Content-Type' =>  'application/json' }
         expect { assert_schema_conform }.to raise_error(Committee::InvalidResponse)
       end
     end
@@ -42,7 +42,7 @@ describe '#assert_schema_conform', type: :request do
       end
 
       it 'use the setting' do
-        post '/users', params: { nickname: 'willnet' }.to_json, headers: { "Content-Type" =>  "application/json" }
+        post '/users', params: { nickname: 'willnet' }.to_json, headers: { 'Content-Type' =>  'application/json' }
         assert_schema_conform
       end
     end
