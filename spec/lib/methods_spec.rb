@@ -14,6 +14,28 @@ describe '#assert_schema_conform', type: :request do
         post '/users', params: { nickname: 'willnet' }.to_json, headers: { 'Content-Type' =>  'application/json' }
         assert_schema_conform
       end
+
+      context 'and override #request method' do
+        def request
+          'hi'
+        end
+
+        it 'pass' do
+          post '/users', params: { nickname: 'willnet' }.to_json, headers: { 'Content-Type' =>  'application/json' }
+          assert_schema_conform
+        end
+      end
+
+      context 'and override #response method' do
+        def response
+          'hi'
+        end
+
+        it 'pass' do
+          post '/users', params: { nickname: 'willnet' }.to_json, headers: { 'Content-Type' =>  'application/json' }
+          assert_schema_conform
+        end
+      end
     end
 
     context "and when response doesn't conform JSON Schema" do

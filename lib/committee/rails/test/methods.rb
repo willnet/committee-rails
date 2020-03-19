@@ -18,11 +18,11 @@ module Committee::Rails
       end
 
       def request_object
-        request
+        integration_session.request
       end
 
       def response_data
-        [response.status, response.headers, response.body]
+        [integration_session.response.status, integration_session.response.headers, integration_session.response.body]
       end
     end
   end
