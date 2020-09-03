@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/willnet/committee-rails.svg?branch=master)](https://travis-ci.org/willnet/committee-rails)
 [![Gem Version](https://badge.fury.io/rb/committee-rails.svg)](https://badge.fury.io/rb/committee-rails)
 
-You can use `assert_schema_conform` in rails.
+You can use `assert_response_schema_confirm` in rails.
 
 ## Installation
 
@@ -44,7 +44,7 @@ describe 'request spec' do
   describe 'GET /' do
     it 'conform json schema' do
       get '/'
-      assert_schema_conform
+      assert_response_schema_confirm
     end
   end
 end
