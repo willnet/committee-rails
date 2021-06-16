@@ -38,7 +38,10 @@ describe 'request spec' do
   include Committee::Rails::Test::Methods
 
   def committee_options
-    @committee_options ||= { schema_path: Rails.root.join('schema', 'schema.json').to_s }
+    @committee_options ||= {
+      schema_path: Rails.root.join('schema', 'schema.json').to_s,
+      query_hash_key: 'rack.request.query_hash',
+    }
   end
 
   describe 'GET /' do
@@ -56,7 +59,10 @@ If you use rspec, you can use very simple.
 ```ruby
 RSpec.configure do |config|
   config.add_setting :committee_options
-  config.committee_options = { schema_path: Rails.root.join('schema', 'schema.json').to_s }
+  config.committee_options = {
+    schema_path: Rails.root.join('schema', 'schema.json').to_s,
+    query_hash_key: 'rack.request.query_hash',
+  }
 end
 ```
 
