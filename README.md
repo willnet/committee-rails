@@ -41,6 +41,7 @@ describe 'request spec' do
     @committee_options ||= {
       schema_path: Rails.root.join('schema', 'schema.json').to_s,
       query_hash_key: 'rack.request.query_hash',
+      parse_response_by_content_type: false,
     }
   end
 
@@ -62,6 +63,7 @@ RSpec.configure do |config|
   config.committee_options = {
     schema_path: Rails.root.join('schema', 'schema.json').to_s,
     query_hash_key: 'rack.request.query_hash',
+    parse_response_by_content_type: false,
   }
 end
 ```
