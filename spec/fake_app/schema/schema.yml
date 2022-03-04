@@ -68,6 +68,19 @@ paths:
                 required:
                   - id
                   - nickname
+        '400':
+          description: bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: integer
+                    example: 400
+                  error:
+                    type: string
+                    example: Bad Request
 components:
   schemas:
     id:

@@ -18,6 +18,8 @@ class UsersController < ApplicationController
   end
 
   def update
+    raise ActionController::BadRequest if params[:id] == '0'
+
     render json: { id: 1 }
   end
 end

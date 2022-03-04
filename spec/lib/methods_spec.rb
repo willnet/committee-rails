@@ -40,8 +40,25 @@ describe '#assert_schema_conform', type: :request do
 
     context "and when response doesn't conform YAML Schema" do
       it 'raise Committee::InvalidResponse' do
-        patch '/users/1', params: { nickname: 'willnet' }.to_json, headers: { 'Content-Type' =>  'application/json' }
+        patch '/users/1', params: { nickname: 'willnet' }.to_json, headers: { 'Content-Type' =>  'application/json', 'Accept' => 'application/json' }
         expect { assert_schema_conform }.to raise_error(Committee::InvalidResponse)
+      end
+    end
+
+    context 'and when bad request' do
+      around do |example|
+        Rails.application.env_config['action_dispatch.show_detailed_exceptions'] = false
+        Rails.application.env_config['action_dispatch.show_exceptions'] = true
+
+        example.run
+
+        Rails.application.env_config['action_dispatch.show_detailed_exceptions'] = true
+        Rails.application.env_config['action_dispatch.show_exceptions'] = false
+      end
+
+      it 'pass' do
+        patch '/users/0', params: { nickname: 'willnet' }.to_json, headers: { 'Content-Type': 'application/json', 'Accept' => 'application/json' }
+        assert_schema_conform(400)
       end
     end
   end
