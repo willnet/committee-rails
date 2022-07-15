@@ -12,7 +12,7 @@ describe '#assert_schema_conform', type: :request do
     context 'and when response conform YAML Schema' do
       it 'pass' do
         post '/users', params: { nickname: 'willnet' }.to_json, headers: { 'Content-Type' =>  'application/json' }
-        assert_schema_conform
+        assert_schema_conform(200)
       end
 
       context 'and override #request method' do
@@ -22,7 +22,7 @@ describe '#assert_schema_conform', type: :request do
 
         it 'pass' do
           post '/users', params: { nickname: 'willnet' }.to_json, headers: { 'Content-Type' =>  'application/json' }
-          assert_schema_conform
+          assert_schema_conform(200)
         end
       end
 
@@ -33,7 +33,7 @@ describe '#assert_schema_conform', type: :request do
 
         it 'pass' do
           post '/users', params: { nickname: 'willnet' }.to_json, headers: { 'Content-Type' =>  'application/json' }
-          assert_schema_conform
+          assert_schema_conform(200)
         end
       end
     end
@@ -41,7 +41,7 @@ describe '#assert_schema_conform', type: :request do
     context "and when response doesn't conform YAML Schema" do
       it 'raise Committee::InvalidResponse' do
         patch '/users/1', params: { nickname: 'willnet' }.to_json, headers: { 'Content-Type' =>  'application/json', 'Accept' => 'application/json' }
-        expect { assert_schema_conform }.to raise_error(Committee::InvalidResponse)
+        expect { assert_schema_conform(200) }.to raise_error(Committee::InvalidResponse)
       end
     end
 
@@ -73,7 +73,7 @@ describe '#assert_schema_conform', type: :request do
 
       it 'use default setting' do
         post '/users', params: { nickname: 'willnet' }
-        expect{ assert_schema_conform }.to raise_error(Errno::ENOENT) # not exist doc/schema/schema.json
+        expect{ assert_schema_conform(200) }.to raise_error(Errno::ENOENT) # not exist doc/schema/schema.json
       end
     end
 
@@ -84,7 +84,7 @@ describe '#assert_schema_conform', type: :request do
 
       it 'use the setting' do
         post '/users', params: { nickname: 'willnet' }.to_json, headers: { 'Content-Type' =>  'application/json' }
-        assert_schema_conform
+        assert_schema_conform(200)
       end
     end
   end
