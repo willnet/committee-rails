@@ -1,0 +1,98 @@
+openapi: 3.0.3
+info:
+  version: 1.0.0
+  title: OpenAPI3 Test
+servers:
+- url: https://example.com/
+paths:
+  /users:
+    post:
+      description: create user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nickname:
+                  $ref: '#/components/schemas/nickname'
+              required:
+                - nickname
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    $ref: '#/components/schemas/id'
+                  nickname:
+                    $ref: '#/components/schemas/nickname'
+                required:
+                  - id
+                  - nickname
+  /users/{id}:
+    patch:
+      description: update user
+      parameters:
+        - name: id
+          example: 42
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nickname:
+                  $ref: '#/components/schemas/nickname'
+              required:
+                - nickname
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    $ref: '#/components/schemas/id'
+                  nickname:
+                    $ref: '#/components/schemas/nickname'
+                required:
+                  - id
+                  - nickname
+        '400':
+          description: bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: integer
+                    example: 400
+                  error:
+                    type: string
+                    example: Bad Request
+components:
+  schemas:
+    id:
+      example: 42
+      type: integer
+      readOnly: true
+    nickname:
+      type: string
+      example: willnet
+    created_at:
+      format: date-time
+      type: string
+    updated_at:
+      format: date-time
+      type: string

@@ -1,4 +1,5 @@
 require 'committee'
+require 'committee/rails/request_object'
 
 module Committee::Rails
   module Test
@@ -18,7 +19,7 @@ module Committee::Rails
       end
 
       def request_object
-        integration_session.request
+        @request_object ||= Committee::Rails::RequestObject.new(integration_session.request)
       end
 
       def response_data
