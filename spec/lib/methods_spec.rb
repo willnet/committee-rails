@@ -51,11 +51,12 @@ describe '#assert_schema_conform', type: :request do
         original_show_exceptions = Rails.application.env_config['action_dispatch.show_exceptions']
         Rails.application.env_config['action_dispatch.show_detailed_exceptions'] = false
         Rails.application.env_config['action_dispatch.show_exceptions'] = true
-
-        example.run
-      ensure
-        Rails.application.env_config['action_dispatch.show_detailed_exceptions'] = original_show_detailed_exceptions
-        Rails.application.env_config['action_dispatch.show_exceptions'] = original_show_exceptions
+        begin
+          example.run
+        ensure
+          Rails.application.env_config['action_dispatch.show_detailed_exceptions'] = original_show_detailed_exceptions
+          Rails.application.env_config['action_dispatch.show_exceptions'] = original_show_exceptions
+        end
       end
 
       it 'pass as 400' do
