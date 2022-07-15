@@ -2,7 +2,7 @@ require 'action_dispatch/http/request'
 
 module Committee::Rails
   class RequestObject
-    delegate(*ActionDispatch::Request.public_instance_methods, to: :@request)
+    delegate_missing_to :@request
 
     def initialize(request)
       @request = request
