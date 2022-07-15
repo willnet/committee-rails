@@ -47,16 +47,18 @@ describe '#assert_schema_conform', type: :request do
 
     context 'and when bad request' do
       around do |example|
+        original_show_detailed_exceptions = Rails.application.env_config['action_dispatch.show_detailed_exceptions']
+        original_show_exceptions = Rails.application.env_config['action_dispatch.show_exceptions']
         Rails.application.env_config['action_dispatch.show_detailed_exceptions'] = false
         Rails.application.env_config['action_dispatch.show_exceptions'] = true
 
         example.run
-
-        Rails.application.env_config['action_dispatch.show_detailed_exceptions'] = true
-        Rails.application.env_config['action_dispatch.show_exceptions'] = false
+      ensure
+        Rails.application.env_config['action_dispatch.show_detailed_exceptions'] = original_show_detailed_exceptions
+        Rails.application.env_config['action_dispatch.show_exceptions'] = original_show_exceptions
       end
 
-      it 'pass' do
+      it 'pass as 400' do
         patch '/users/0', params: { nickname: 'willnet' }.to_json, headers: { 'Content-Type': 'application/json', 'Accept' => 'application/json' }
         assert_schema_conform(400)
       end
