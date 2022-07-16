@@ -13,6 +13,10 @@ class ApplicationController < ActionController::Base
 end
 
 class UsersController < ApplicationController
+  def index
+    render json: [{ id: 1, nickname: 'willnet' }]
+  end
+
   def create
     render json: { id: 1, nickname: 'willnet' }
   end

@@ -9,11 +9,11 @@ module Committee::Rails
     end
 
     def path
-      @request.original_fullpath
+      URI.parse(@request.original_fullpath).path
     end
 
     def path_info
-      @request.original_fullpath
+      URI.parse(@request.original_fullpath).path
     end
 
     def request_method
