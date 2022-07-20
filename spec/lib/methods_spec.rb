@@ -15,6 +15,13 @@ describe '#assert_schema_conform', type: :request do
         assert_schema_conform(200)
       end
 
+      context 'and request with querystring' do
+        it 'pass' do
+          get '/users', params: { page: 1 }, headers: { 'Content-Type' =>  'application/json' }
+          assert_schema_conform(200)
+        end
+      end
+
       context 'and override #request method' do
         def request
           'hi'

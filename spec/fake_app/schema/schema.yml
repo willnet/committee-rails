@@ -6,6 +6,32 @@ servers:
 - url: https://example.com/
 paths:
   /users:
+    get:
+      description: read users
+      parameters:
+        - name: page
+          example: 42
+          in: query
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      $ref: '#/components/schemas/id'
+                    nickname:
+                      $ref: '#/components/schemas/nickname'
+                  required:
+                    - id
+                    - nickname
     post:
       description: create user
       requestBody:
