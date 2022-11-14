@@ -50,7 +50,7 @@ describe 'request spec' do
   end
 
   describe 'GET /' do
-    it 'conform json schema' do
+    it 'confirm json schema' do
       get '/'
       assert_response_schema_confirm(200)
     end
