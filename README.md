@@ -1,6 +1,6 @@
 # Committee::Rails
 
-[![Build Status](https://travis-ci.org/willnet/committee-rails.svg?branch=master)](https://travis-ci.org/willnet/committee-rails)
+[![Build Status](https://github.com/willnet/committee-rails/actions/workflows/test.yml/badge.svg)](https://github.com/willnet/committee-rails/actions/workflows/test.yml)
 [![Gem Version](https://badge.fury.io/rb/committee-rails.svg)](https://badge.fury.io/rb/committee-rails)
 
 You can use `assert_response_schema_confirm` in rails.
