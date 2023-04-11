@@ -5,6 +5,10 @@
 
 You can use `assert_response_schema_confirm` in rails.
 
+## Looking for maintainers!
+
+If interested, please contact @willnet
+
 ## Installation
 
 Add this line to your application's Gemfile:
