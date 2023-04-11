@@ -17,6 +17,10 @@ And then execute:
 
     $ bundle
 
+If you use committee prior to 5.0.0, you have to use committee-rails 0.6.x. Please see below.
+
+[0.6 (0-6-stable) documentation](https://github.com/willnet/committee-rails/tree/0-6-stable)
+
 If you use committee prior to 4.4.0, you have to use committee-rails 0.5.x. Please see below.
 
 [0.5 (0-5-stable) documentation](https://github.com/willnet/committee-rails/tree/0-5-stable)
