@@ -3,7 +3,7 @@
 [![Build Status](https://github.com/willnet/committee-rails/actions/workflows/test.yml/badge.svg)](https://github.com/willnet/committee-rails/actions/workflows/test.yml)
 [![Gem Version](https://badge.fury.io/rb/committee-rails.svg)](https://badge.fury.io/rb/committee-rails)
 
-You can use `assert_response_schema_confirm` or `assert_schema_conform` in rails.
+You can use `assert_request_schema_confirm`, `assert_response_schema_confirm` or `assert_schema_conform` in rails.
 
 ## Looking for maintainers!
 
@@ -58,14 +58,19 @@ describe 'request spec' do
   end
 
   describe 'GET /' do
-    it 'conform json schema' do
-      get '/'
-      assert_response_schema_confirm(200)
-    end
-
-    it 'conform json schema request and response' do
+    it 'conforms to schema with 200 response code' do
       get '/'
       assert_schema_conform(200)
+    end
+
+    it 'conforms to request schema' do
+      get '/'
+      assert_request_schema_confirm
+    end
+
+    it 'conforms to response schema with 200 response code' do
+      get '/'
+      assert_response_schema_confirm(200)
     end
   end
 end
