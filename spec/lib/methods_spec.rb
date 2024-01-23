@@ -57,7 +57,7 @@ describe '#assert_schema_conform', type: :request do
         original_show_detailed_exceptions = Rails.application.env_config['action_dispatch.show_detailed_exceptions']
         original_show_exceptions = Rails.application.env_config['action_dispatch.show_exceptions']
         Rails.application.env_config['action_dispatch.show_detailed_exceptions'] = false
-        Rails.application.env_config['action_dispatch.show_exceptions'] = true
+        Rails.application.env_config['action_dispatch.show_exceptions'] = :all
         begin
           example.run
         ensure
