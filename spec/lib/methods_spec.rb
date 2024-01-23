@@ -6,7 +6,7 @@ describe '#assert_schema_conform', type: :request do
   context 'when set option' do
     before do
       RSpec.configuration.add_setting :committee_options
-      RSpec.configuration.committee_options = { schema_path: Rails.root.join('schema', 'schema.yml').to_s, old_assert_behavior: false, query_hash_key: 'rack.request.query_hash', parse_response_by_content_type: false, strict_reference_validation: true }
+      RSpec.configuration.committee_options = { schema_path: Rails.root.join('schema', 'schema.yml').to_s, old_assert_behavior: false, query_hash_key: 'rack.request.query_hash', parse_response_by_content_type: false }
     end
 
     context 'and when response conform YAML Schema' do
@@ -87,7 +87,7 @@ describe '#assert_schema_conform', type: :request do
 
     context 'when override default setting' do
       def committee_options
-        { schema_path: Rails.root.join('schema', 'schema.yml').to_s, old_assert_behavior: false, query_hash_key: 'rack.request.query_hash', parse_response_by_content_type: false }
+        { schema_path: Rails.root.join('schema', 'schema.yml').to_s, old_assert_behavior: false, query_hash_key: 'rack.request.query_hash', parse_response_by_content_type: false, strict_reference_validation: true}
       end
 
       it 'use the setting' do
