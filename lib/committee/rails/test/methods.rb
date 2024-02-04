@@ -10,7 +10,7 @@ module Committee::Rails
         if defined?(RSpec) && (options = RSpec.try(:configuration).try(:committee_options))
           options
         else
-          { schema_path: default_schema, query_hash_key: 'rack.request.query_hash', parse_response_by_content_type: false }
+          { schema_path: default_schema }
         end
       end
 
