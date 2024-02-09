@@ -4,6 +4,7 @@ FakeApp.config.eager_load = false
 FakeApp.config.hosts << 'www.example.com' if FakeApp.config.respond_to?(:hosts)
 FakeApp.config.root = File.dirname(__FILE__)
 FakeApp.config.secret_key_base = 'secret'
+FakeApp.config.active_support.cache_format_version = 7.0
 FakeApp.initialize!
 
 FakeApp.routes.draw do

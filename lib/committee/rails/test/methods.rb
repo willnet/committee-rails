@@ -10,7 +10,7 @@ module Committee::Rails
         if defined?(RSpec) && (options = RSpec.try(:configuration).try(:committee_options))
           options
         else
-          { schema_path: default_schema }
+          { schema_path: default_schema, strict_reference_validation: false }
         end
       end
 
