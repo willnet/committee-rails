@@ -1,0 +1,9 @@
+source 'https://rubygems.org'
+
+gemspec path: '../'
+
+gem 'activesupport', '~> 8.1.0'
+gem 'actionpack', '~> 8.1.0'
+gem 'railties', '~> 8.1.0'
+gem 'rake'
+gem 'rspec-rails'
