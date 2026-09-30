@@ -19,7 +19,7 @@ module Committee::Rails
       end
 
       def request_object
-        @request_object ||= Committee::Rails::RequestObject.new(integration_session.request)
+        Committee::Rails::RequestObject.new(integration_session.request)
       end
 
       def response_data

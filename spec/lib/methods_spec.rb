@@ -15,6 +15,16 @@ describe '#assert_schema_conform', type: :request do
         assert_schema_conform(200)
       end
 
+      context 'and multiple requests in one example' do
+        it 'validates each request against its own operation' do
+          post '/users', params: { nickname: 'willnet' }.to_json, headers: { 'Content-Type' => 'application/json' }
+          assert_schema_conform(200)
+
+          get '/users', params: { page: 1 }, headers: { 'Content-Type' => 'application/json' }
+          assert_schema_conform(200)
+        end
+      end
+
       context 'and request with querystring' do
         it 'pass' do
           get '/users', params: { page: 1 }, headers: { 'Content-Type' =>  'application/json' }
