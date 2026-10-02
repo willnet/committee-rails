@@ -78,3 +78,17 @@ jobs:
         run: |
           set -xe
           bundle exec rake
+
+  test-success:
+    name: All tests passed
+    needs: test
+    # Run even when a matrix job fails or is skipped, so this required check
+    # cannot report success without every test passing.
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    steps:
+      - name: Verify test matrix result
+        run: test "$TEST_RESULT" = success
+        env:
+          TEST_RESULT: ${{ needs.test.result }}
